@@ -1,0 +1,76 @@
+﻿
+<div class="container">
+
+    <div class="page-header">
+        <h3>Payload Service Test</h3>
+    </div>
+
+    <div>
+        <div id="steps">
+
+            <ul id="tabs" class="nav nav-tabs">
+
+                 <li class="active">
+                    <a href="#tab-Empty" data-toggle="tab">
+                        Intro <span class="glyphicon glyphicon-step-forward"></span> 
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#tab-loadTest" data-toggle="tab">
+                        1. Load Test Data <span class="glyphicon glyphicon-step-forward"></span> 
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-inputJson" data-toggle="tab">
+                        JSON from Test Data <span class="glyphicon glyphicon-step-forward"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-output" data-toggle="tab">
+                        Test the Server Response
+                    </a>
+                </li>
+                
+            </ul>
+            
+            <div class="tab-content">
+
+                <div  class="tab-pane active" id="tab-Empty">
+                    <p class="add-padding">
+                        This is a very simple UI to allow visualize and modify the JSON data / arrays
+                    </p>
+                    <ul>
+                        <li>The First Step / Tab loads an example from the Server</li>
+                        <li>The Second Tab contains a box where the input can be changed</li>
+                        <li>The Third Tab displays the Server Response</li>                       
+                    </ul>
+
+                </div>
+
+                <div class="tab-pane" id="tab-loadTest">
+                    @Html.Partial("Home/_payloadTable")
+                </div>
+        
+                <div class="tab-pane" id="tab-inputJson">
+                    @Html.Partial("Home/_inputJson")
+                </div>
+
+                <div class="tab-pane" id="tab-output">
+                    @Html.Partial("Home/_output")
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        MI9Payload.init();
+    });
+</script>
